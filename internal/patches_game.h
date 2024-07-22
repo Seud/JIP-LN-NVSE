@@ -3719,7 +3719,7 @@ void __fastcall CalculateHitDamageHook(ActorHitData *hitData, int, UInt32 noBloc
 		ApplyPerkModifiers(kPerkEntry_ModifyDamageThresholdAttacker, source, hitWeapon, target, &valueMod);
 		dmgThreshold -= valueMod;
 	}
-	s_VATSHitDT = dmgThreshold;
+	s_VATSHitDT = dmgThreshold * 1000;
 	bool flagArg;
 	if (dmgThreshold > 0)
 	{
@@ -3783,6 +3783,7 @@ void __fastcall CalculateHitDamageHook(ActorHitData *hitData, int, UInt32 noBloc
 		hitData->armorDmg *= valueMod;
 		hitData->weaponDmg *= valueMod;
 	}
+	PrintLog("DAM %f", hitData->healthDmg);
 }
 
 __declspec(naked) void SetHitLocationHook()

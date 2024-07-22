@@ -103,7 +103,8 @@
     </Link>
     <PostBuildEvent>
       <Message>Installing DLL...</Message>
-      <Command>copy "$(TargetPath)" "D:\Games\Fallout New Vegas\Data\NVSE\plugins\$(TargetFileName)"</Command>
+      <Command>copy "$(TargetPath)" "$(FalloutNVPath)\Data\NVSE\plugins\$(TargetFileName)"</Command>
+      <Command>copy "$(TargetPath)" "C:\Modding\MO2-TTW\mods\JIP LN NVSE Plugin - Experimental\NVSE\plugins\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -152,7 +153,7 @@
     </Link>
     <PostBuildEvent>
       <Message>Installing DLL...</Message>
-      <Command>copy "$(TargetPath)" "D:\Games\Fallout New Vegas\Data\NVSE\plugins\$(TargetFileName)"</Command>
+      <Command>copy "$(TargetPath)" "$(FalloutNVPath)\Data\NVSE\plugins\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
